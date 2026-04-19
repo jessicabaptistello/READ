@@ -113,7 +113,7 @@ Deno.serve(async (req) => {
       offset += a.length;
     }
 
-    const audioBase64 = base64Encode(merged);
+    const audioBase64 = encodeBase64(merged);
     return new Response(
       JSON.stringify({ audioContent: audioBase64, chunks: chunks.length }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } },
