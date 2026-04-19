@@ -64,7 +64,7 @@ const Index = () => {
       const { data, error } = await supabase.functions.invoke("tts", { body: { text } });
       if (error) throw error;
       if (data.error) throw new Error(data.error);
-      setAudioUrl(`data:audio/mpeg;base64,${data.audioContent}`);
+      setAudioUrl(`data:${data.mimeType || "audio/wav"};base64,${data.audioContent}`);
       toast({ title: "Áudio pronto", description: `${data.chunks} trecho(s) gerado(s)` });
     } catch (e) {
       toast({ title: "Erro na geração de áudio", description: e instanceof Error ? e.message : "Falha", variant: "destructive" });
@@ -81,7 +81,7 @@ const Index = () => {
       <header className="container max-w-4xl pt-16 pb-10 text-center">
         <div className="mb-4 inline-flex items-center gap-2 rounded-full border bg-card px-4 py-1.5 text-xs font-medium text-muted-foreground shadow-paper">
           <Sparkles className="h-3.5 w-3.5 text-primary" />
-          Powered by ElevenLabs
+          Powered by Lovable AI
         </div>
         <h1 className="font-serif-display text-5xl font-semibold tracking-tight md:text-6xl">
           Audiobook<span className="text-primary">.</span>
