@@ -1,5 +1,5 @@
 import { corsHeaders } from "https://esm.sh/@supabase/supabase-js@2.95.0/cors";
-import { encode as base64Encode } from "https://deno.land/std@0.224.0/encoding/base64.ts";
+import { encodeBase64 } from "https://deno.land/std@0.224.0/encoding/base64.ts";
 
 // ElevenLabs TTS — splits long text into chunks, uses request stitching
 // for natural prosody between segments, returns concatenated MP3 as base64.
@@ -113,7 +113,7 @@ Deno.serve(async (req) => {
       offset += a.length;
     }
 
-    const audioBase64 = base64Encode(merged);
+    const audioBase64 = encodeBase64(merged);
     return new Response(
       JSON.stringify({ audioContent: audioBase64, chunks: chunks.length }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } },
