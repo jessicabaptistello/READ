@@ -1,17 +1,9 @@
-<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
 
-=======
->>>>>>> 3e835ac51714300863db02616f2bd7252c610dd7
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
-=======
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap');
-
->>>>>>> 3e835ac51714300863db02616f2bd7252c610dd7
 @layer base {
   :root {
     /* Warm paper / sepia reading theme */
